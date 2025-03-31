@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: "zuca-bot"
+
+secret:
+  discord-token: ${DISCORD_APPLICATION_TOKEN}
