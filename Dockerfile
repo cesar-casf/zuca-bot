@@ -1,5 +1,5 @@
 # Usa a imagem do OpenJDK 24
-FROM eclipse-temurin:21-jdk
+FROM openjdk:24-jdk
 
 # Define o diretório de trabalho
 WORKDIR /app
