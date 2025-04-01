@@ -34,7 +34,7 @@ jobs:
             cd ~/zuca-bot
             git fetch origin main
             git reset --hard origin/main
-            mvn clean package -DskipTests
+            mvn clean package spring-boot:repackage -DskipTests=true
             docker build -t zuca-bot .
             docker stop zuca-bot-container || true
             docker rm zuca-bot-container || true
