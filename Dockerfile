@@ -5,7 +5,7 @@ FROM eclipse-temurin:21-jdk
 WORKDIR /app
 
 # Copia o JAR gerado para dentro do container
-COPY target/bot.jar /app/bot.jar  # Se usa Maven
+COPY target/zuca-bot-0.0.1-SNAPSHOT.jar /app/zuca-bot.jar
 # COPY build/libs/bot.jar /app/bot.jar  # Se usa Gradle
 
 # Define a porta para a API
