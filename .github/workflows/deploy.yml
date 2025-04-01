@@ -32,8 +32,6 @@ jobs:
             cd ~/zuca-bot
             git fetch origin main
             git reset --hard origin/main
-            # Força o uso do JDK 24 no servidor também
-            sdk use java 24-tem
             mvn clean package -DskipTests
             docker build -t zuca-bot .
             docker stop zuca-bot-container || true
