@@ -25,5 +25,5 @@ jobs:
             docker build -t zuca-bot .
             docker stop zuca-bot-container || true
             docker rm zuca-bot-container || true
-            docker run --env-file .env -d --name zuca-bot-container -p 8080:8080 --restart always zuca
+            docker run --env-file .env -d --name zuca-bot-container -p 8080:8080 --restart always zuca-bot
           EOF
