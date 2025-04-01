@@ -11,7 +11,8 @@ jobs:
 
     steps:
       - name: Checar o Repositório
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+      - uses: webfactory/ssh-agent@v0.9.0
         with:
           fetch-depth: 0
           ssh-key: ${{ secrets.DEPLOY_KEY }}
