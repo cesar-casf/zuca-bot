@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import javax.security.auth.login.LoginException;
 import java.util.EnumSet;
 import java.util.List;
 
@@ -20,7 +19,7 @@ public class JDAConfig {
     @Bean
     public JDA jda(List<ListenerAdapter> eventListeners) throws InterruptedException {
         JDABuilder builder = JDABuilder
-                .createDefault(discordToken, EnumSet.of(GatewayIntent.GUILD_MESSAGES, GatewayIntent.MESSAGE_CONTENT));
+                .createLight(discordToken, EnumSet.of(GatewayIntent.GUILD_MESSAGES, GatewayIntent.MESSAGE_CONTENT));
 
         // Adiciona todos os listeners anotados como @Component
         eventListeners.forEach(builder::addEventListeners);

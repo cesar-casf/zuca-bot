@@ -1,4 +1,4 @@
-package com.zuca.zuca_bot.bot.listener;
+package com.zuca.zuca_bot.bot.message.listener;
 
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
