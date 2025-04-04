@@ -2,6 +2,7 @@ package com.zuca.zuca_bot.bot.command;
 
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.events.session.ReadyEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -15,6 +16,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @Service
+@Slf4j
 public class CommandRegistry extends ListenerAdapter {
     @Override
     public void onReady(@NotNull ReadyEvent event) {
@@ -25,6 +27,6 @@ public class CommandRegistry extends ListenerAdapter {
 
         );
         event.getJDA().updateCommands().addCommands(commands).queue();
-        System.out.println("Comandos inseridos!");
+        log.info("Comandos inseridos!");
     }
 }
