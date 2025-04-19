@@ -23,7 +23,7 @@ public class CommandRegistry extends ListenerAdapter {
         List<CommandData> commands = List.of(
                 Commands.slash("fala", "Faz o bot repetir uma mensagem")
                         .addOption(OptionType.STRING, "conteudo", "O que bot deve falar", true),
-                Commands.slash("flamengo", "Diz que o flamengo é o melhor time")
+                Commands.slash("status", "Retorna status do bot")
 
         );
         event.getJDA().updateCommands().addCommands(commands).queue();

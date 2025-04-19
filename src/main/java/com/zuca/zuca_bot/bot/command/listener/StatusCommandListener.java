@@ -7,12 +7,12 @@ import org.springframework.stereotype.Component;
 import java.util.Objects;
 
 @Component
-public class FlamengoCommandListener extends ListenerAdapter {
+public class StatusCommandListener extends ListenerAdapter {
 
     @Override
     public void onSlashCommandInteraction(SlashCommandInteractionEvent event) {
-        if (event.getName().equals("flamengo")) {
-            event.reply(event.getUser().getName() + "disse que o Flamengo é o melhor time do mundo!").queue(); // O bot responde imediatamente
+        if (event.getName().equals("status")) {
+            event.reply("O Zuca bot está ativo!!").queue(); // O bot responde imediatamente
         }
     }
 }
