@@ -10,9 +10,9 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.Oracle12cDialect
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.Oracle12cDialect
 
 secret:
   discord-token: ${DISCORD_APPLICATION_TOKEN}
