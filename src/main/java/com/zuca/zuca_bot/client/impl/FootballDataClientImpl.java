@@ -5,6 +5,7 @@ import com.zuca.zuca_bot.domain.models.dto.CompetitionMatches;
 import com.zuca.zuca_bot.domain.models.dto.Standings;
 import com.zuca.zuca_bot.domain.models.dto.TeamMatches;
 import com.zuca.zuca_bot.domain.models.dto.TopScorers;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -14,12 +15,10 @@ import reactor.core.publisher.Mono;
 public class FootballDataClientImpl implements FootballDataClient {
     private final WebClient webClient;
 
-    public FootballDataClientImpl(@Value("${secret.football-api-token}") String token) {
-        this.webClient = WebClient.builder()
-                .baseUrl("https://api.football-data.org/v4")
-                .defaultHeader("X-Auth-Token", token)
-                .build();
+    public FootballDataClientImpl(@Qualifier("football-api") WebClient webClient) {
+        this.webClient = webClient;
     }
+
 
     @Override
     public Mono<CompetitionMatches> fetchCompetitionMatches(Integer competitionId, Integer seasonYear) {
