@@ -8,10 +8,10 @@ WORKDIR /app
 COPY target/zuca-bot-0.0.1-SNAPSHOT.jar /app/zuca-bot.jar
 
 # Copia a pasta wallet para a imagem
-COPY target/classes/wallet /app/wallet
+COPY target/classes/wallet /app/oradb/wallet
 
 # Define a variável de ambiente dentro da imagem
-ENV TNS_ADMIN=/wallet
+ENV TNS_ADMIN=oradb/wallet
 
 # Define a porta para a API
 EXPOSE 8080

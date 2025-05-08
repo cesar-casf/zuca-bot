@@ -2,7 +2,7 @@ spring:
   application:
     name: "zuca-bot"
   datasource:
-    url: jdbc:oracle:thin:@zucadb_high?TNS_ADMIN=/wallet
+    url: jdbc:oracle:thin:@zucadb_high?TNS_ADMIN=oradb/wallet
     username: ${ORA_USERNAME}
     password: ${ORA_PASSWORD}
     driver-class-name: oracle.jdbc.OracleDriver
