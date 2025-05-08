@@ -38,7 +38,7 @@ jobs:
             git checkout --ours .
             git add .
             git commit -m 'Merge from GitHub main branch' || echo 'No changes to merge'
-            mvn clean package -DskipTests
+            /home/ubuntu/.sdkman/candidates/maven/current/bin/mvn clean package -DskipTests
             docker build -t zuca-bot .
             docker stop zuca-bot-container || true
             docker rm zuca-bot-container || true
