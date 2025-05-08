@@ -6,7 +6,12 @@ WORKDIR /app
 
 # Copia o JAR gerado para dentro do container
 COPY target/zuca-bot-0.0.1-SNAPSHOT.jar /app/zuca-bot.jar
-# COPY build/libs/bot.jar /app/bot.jar  # Se usa Gradle
+
+# Copia a pasta wallet para a imagem
+COPY /zuca-bot/src/main/resources/wallet /app/wallet
+
+# Define a variável de ambiente dentro da imagem
+ENV TNS_ADMIN=/app/wallet
 
 # Define a porta para a API
 EXPOSE 8080
