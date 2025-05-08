@@ -6,6 +6,7 @@ spring:
     username: ${ORA_USERNAME}
     password: ${ORA_PASSWORD}
     driver-class-name: oracle.jdbc.OracleDriver
+    poolName: Ora-Dev
   jpa:
     hibernate:
       ddl-auto: update
