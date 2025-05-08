@@ -11,7 +11,7 @@ COPY target/zuca-bot-0.0.1-SNAPSHOT.jar /app/zuca-bot.jar
 COPY target/classes/wallet /app/wallet
 
 # Define a variável de ambiente dentro da imagem
-ENV TNS_ADMIN=/app/wallet
+ENV TNS_ADMIN=/wallet
 
 # Define a porta para a API
 EXPOSE 8080
