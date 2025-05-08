@@ -34,7 +34,10 @@ jobs:
           ssh oracle-server << 'EOF'
             cd ~/zuca-bot
             git fetch origin main
-            git reset --hard origin/main
+            git merge --no-commit --no-ff origin/main --allow-unrelated-histories
+            git checkout --ours .
+            git add .
+            git commit -m 'Merge from GitHub main branch' || echo 'No changes to merge'
             mvn clean package -DskipTests
             docker build -t zuca-bot .
             docker stop zuca-bot-container || true
