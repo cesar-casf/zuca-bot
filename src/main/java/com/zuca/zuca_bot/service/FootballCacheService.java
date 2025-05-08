@@ -29,7 +29,7 @@ public class FootballCacheService {
         this.standingsRepo = standingsRepo;
     }
 
-    public void updateCompetition(Integer competitionId, Integer seasonYear) {
+    public void updateCompetitionMatches(Integer competitionId, Integer seasonYear) {
         client.fetchCompetitionMatches(competitionId, seasonYear)
                 .flatMap(matches -> {
                     try {
@@ -45,7 +45,9 @@ public class FootballCacheService {
                     }
                     return Mono.empty();
                 }).subscribe();
+    }
 
+    public void updateCompetitionStandings(Integer competitionId, Integer seasonYear) {
         client.fetchStandings(competitionId, seasonYear)
                 .flatMap(standings -> {
                     try {

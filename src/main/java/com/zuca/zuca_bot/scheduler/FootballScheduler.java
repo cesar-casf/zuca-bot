@@ -22,9 +22,10 @@ public class FootballScheduler {
     public void scheduleUpdate() {
         int anoAtual = Year.now().getValue();
 
-        cacheService.updateCompetition(2013, anoAtual); // Brasileirao
-        cacheService.updateCompetition(2017, anoAtual); // Copa do Brasil
-        cacheService.updateCompetition(2152, anoAtual); // Libertadores
-        cacheService.updateCompetition(2001, anoAtual); // Champions League
+        cacheService.updateCompetitionMatches(2013, anoAtual); // Brasileirao
+        cacheService.updateCompetitionStandings(2013, anoAtual); // Brasileirao
+//        cacheService.updateCompetitionMatches(2017, anoAtual); // Copa do Brasil
+        cacheService.updateCompetitionMatches(2152, anoAtual); // Libertadores
+//        cacheService.updateCompetitionMatches(2001, anoAtual); // Champions League
     }
 }
