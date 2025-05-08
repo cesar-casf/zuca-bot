@@ -8,7 +8,7 @@ WORKDIR /app
 COPY target/zuca-bot-0.0.1-SNAPSHOT.jar /app/zuca-bot.jar
 
 # Copia a pasta wallet para a imagem
-COPY /zuca-bot/src/main/resources/wallet /app/wallet
+COPY target/classes/wallet /app/wallet
 
 # Define a variável de ambiente dentro da imagem
 ENV TNS_ADMIN=/app/wallet
